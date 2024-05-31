@@ -1,16 +1,18 @@
 #!/bin/bash
-SSH_KEY="prediction-system-infra/tf_key.pem"
-cd text-to-music-infra/ || exit
+SSH_KEY="../prediction-system-infra/tf_key.pem"
+cd .. || exit
+cd prediction-system-infra/ || exit
 INSTANCE_IP=$(terraform output -raw public_ip)
 
-echo "$(pwd)"
+#echo "$(pwd)"
 
-cd ../ || exit
+cd ../ || exit && cd scripts/ || exit
 
-echo "$(pwd)"
+#echo "$(pwd)"
 
 
-echo "$INSTANCE_IP"
+#echo "$INSTANCE_IP"
+
 echo "Deploying to production..."
 
 scp -o StrictHostKeyChecking=no -i $SSH_KEY -r docker-compose.yml ubuntu@"$INSTANCE_IP":/home/ubuntu
