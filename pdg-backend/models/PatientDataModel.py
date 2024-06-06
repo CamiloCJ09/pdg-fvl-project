@@ -1,0 +1,45 @@
+from pydantic import BaseModel
+
+class PatientInput(BaseModel):
+    Horario_laboral: int
+    Edad: float
+    Tiempo_entre_creacion_cita_y_cita: int
+    Confirmado_por_email: int
+    Paciente_NO_ubicado: int
+    Confirmado_FAMILIAR: int
+    Confirmado_PACIENTE: int
+    Confirmado: int
+    Antecedente_No_Show: int
+    Antecedente_Cita_Asistida: int
+    Antecedente_Cita_Cancelada: int
+    Estudio_Simple: int
+    Anestesia: int
+    Reprogramacion: int
+    Reprogramacion_por_paciente: int
+    Cita_adelantada: int
+    Estrato_socioeconomico: float
+    Parte_del_Cuerpo_ABDOMEN: bool
+    Parte_del_Cuerpo_CEREBRO: bool
+    Parte_del_Cuerpo_COLUMNA: bool
+    Parte_del_Cuerpo_CORAZON: bool
+    Parte_del_Cuerpo_MAMA: bool
+    Parte_del_Cuerpo_MMII: bool
+    Parte_del_Cuerpo_MMSS: bool
+    Parte_del_Cuerpo_OTRO: bool
+    Parte_del_Cuerpo_PELVIS: bool
+    Parte_del_Cuerpo_PROSTATA: bool
+    Voluntario_Obligatorio: bool
+    Voluntario_Voluntario: bool
+    RS_RC_OT: bool
+    RS_RC_RC: bool
+    RS_RC_RS: bool
+    Sexo_Femenino: bool
+    Sexo_Masculino: bool
+    Grupo_etnico_Afroamericano: bool
+    Grupo_etnico_Caucasico: bool
+    Grupo_etnico_Indigena: bool
+    Grupo_etnico_Mestizo: bool
+    Grupo_etnico_Mulato: bool
+    Grupo_etnico_Negro: bool
+    Grupo_etnico_NingunoAnterior: bool
+    Grupo_etnico_Otro: bool
