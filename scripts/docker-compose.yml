@@ -1,8 +1,7 @@
 version: '3'
 services:
-  nginx:
-    image: nginx:latest
+  predictor-system:
+    image: noshowpredictorfvl/prediction-system:latest
+    container_name: predictor-system
     ports:
-      - "8000:80"
-    volumes:
-      - /var/www/html:/usr/share/nginx/html
+      - "8000:8000"
