@@ -1,0 +1,5 @@
+#All files but .ipynb
+*.xlsx
+*.csv
+*.XLSX
+
