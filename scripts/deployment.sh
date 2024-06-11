@@ -1,6 +1,5 @@
 #!/bin/bash
-chmod 600 "../prediction-system-infra/tf_key.pem"
-SSH_KEY="../prediction-system-infra/tf_key.pem"
+SSH_KEY='${{ secrets.TF_SSH_KEY }}'
 cd .. || exit
 cd prediction-system-infra/ || exit
 INSTANCE_IP=$(terraform output -raw public_ip)
