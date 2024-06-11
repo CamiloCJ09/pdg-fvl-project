@@ -19,15 +19,10 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
-      - name: Terraform apply
+      - name: Terraform apply and Run the app docker compose
         run: |
               cd prediction-system-infra/
               terraform init
               terraform validate
               terraform plan 
               terraform apply -auto-approve
-      - name: Run the app docker compose
-        run: |
-              cd scripts/
-              chmod +x deployment.sh
-              ./deployment.sh
