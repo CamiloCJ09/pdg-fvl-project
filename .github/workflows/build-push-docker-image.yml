@@ -25,7 +25,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
-        context: ./pdg-fvl-project/pdg-backend # Ruta al contexto de construcción (puede ser el directorio actual)
-        file: ./pdg-fvl-project/pdg-backend/Dockerfile  # Ruta al Dockerfile
+        context: ./pdg-backend # Ruta al contexto de construcción (puede ser el directorio actual)
+        file: ./pdg-backend/Dockerfile  # Ruta al Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/prediction-system:latest  # Nombre y tag de la imagen
