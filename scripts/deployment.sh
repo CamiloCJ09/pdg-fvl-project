@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod 600 "../prediction-system-infra/tf_key.pem"
 SSH_KEY="../prediction-system-infra/tf_key.pem"
 cd .. || exit
 cd prediction-system-infra/ || exit
