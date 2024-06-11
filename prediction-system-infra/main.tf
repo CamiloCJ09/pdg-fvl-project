@@ -113,6 +113,11 @@ resource "aws_instance" "app_prod_ec2" {
   security_groups             = ["${aws_security_group.security.id}"]
   associate_public_ip_address = true
 
+  user_data = <<-EOF
+              #!/bin/bash
+              echo 'cd_key_pair' >> /home/ec2-user/.ssh/authorized_keys
+              EOF
+
   subnet_id = aws_subnet.my_subnet.id
 
   tags = {
