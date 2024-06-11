@@ -135,6 +135,11 @@ resource "null_resource" "run_provisioner" {
     host        = aws_instance.app_prod_ec2.public_ip
   }
 
+  provisioner "file" {
+      source      = "../scripts/docker-compose.yml" 
+      destination = "/home/ubuntu/docker-compose.yml"  
+  }
+
   provisioner "remote-exec" {
     inline = [
       "sudo apt update",
@@ -145,7 +150,16 @@ resource "null_resource" "run_provisioner" {
       "sudo apt install -y docker-ce docker-ce-cli containerd.io",
       "sudo usermod -aG docker $USER",
       "sudo systemctl start docker",
-      "sudo systemctl enable docker"
+      "sudo systemctl enable docker",
+     
+    ]
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "cd /home/ubuntu",
+      "sudo docker compose down",
+      "sudo docker compose up -d"  
     ]
   }
 }
