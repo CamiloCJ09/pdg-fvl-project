@@ -1,4 +1,5 @@
 #!/bin/bash
+#Get SSH Key from secrets
 SSH_KEY='${{ secrets.TF_SSH_KEY }}'
 cd .. || exit
 cd prediction-system-infra/ || exit
